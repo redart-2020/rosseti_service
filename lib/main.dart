@@ -1,10 +1,7 @@
-//import 'package:rosseti_service/data/session_options.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:rosseti_service/forms/login.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
-//import 'package:flutter_background_location/flutter_background_location.dart';
-import 'package:http/http.dart' as http;
 
 import 'data/static_variable.dart';
 
@@ -36,15 +33,6 @@ class MyAppState extends State<MyApp> {
   @override
   void initState() {
     super.initState();
-//    FlutterBackgroundLocation.startLocationService();
-//    FlutterBackgroundLocation.getLocationUpdates((location) {
-//      if(UserUID.isNotEmpty) {
-//
-//        SetGeoData(location);
-//        print(
-//            location.latitude.toString() + ' ' + location.longitude.toString());
-//      }
-//    });
   }
 
 

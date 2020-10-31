@@ -61,7 +61,6 @@ class HomePageState extends State<HomePage> with TickerProviderStateMixin {
         house_date = await locations
             .map((locations) => new Location.fromJson(locations))
             .toList();
-        print(response.body);
         for (var house_item in house_date) {
           house_options.add(new DropdownMenuItem<Location>(
             value: house_item,
@@ -106,7 +105,6 @@ class HomePageState extends State<HomePage> with TickerProviderStateMixin {
           headers: {'Authorization': 'Basic ${AuthorizationString}'});
       if (response.statusCode == 200) {
         List users_devices = json.decode(response.body);
-        print(response.body);
         return users_devices
             .map((users_devices) => new UsersDevices.fromJson(users_devices))
             .toList();
@@ -289,21 +287,6 @@ class HomePageState extends State<HomePage> with TickerProviderStateMixin {
             )):Container()
       ],
     );
-  }
-
-  _colorChangeHandler(double position) {
-    //handle out of bounds positions
-    if (position > MediaQuery.of(context).size.width * 0.8) {
-      position = MediaQuery.of(context).size.width * 0.8;
-    }
-    if (position < 0) {
-      position = 0;
-    }
-    print(MediaQuery.of(context).size.width * 0.8);
-    print("New pos: $position");
-    setState(() {
-      _colorSliderPosition = position;
-    });
   }
 
   Future<Null> refreshList() async {
